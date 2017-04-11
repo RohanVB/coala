@@ -18,7 +18,8 @@ class LanguageAttributeErrorTest(unittest.TestCase):
         self.lang_unknown = Language['Unknown']
 
     def tearDown(self):
-        pass
+        del(self.lang_cpp)
+        del(self.lang_unknown)
 
     def test_invalid_attribute(self):
         with self.assertRaisesRegexp(AttributeError, 'not a valid attribute'):
